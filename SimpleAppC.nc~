@@ -1,0 +1,8 @@
+configuration SimpleAppC{
+}
+implementation{
+	components MainC, SimpleC, LedsC;
+	SimpleC.Leds->LedsC;
+	SimpleC->MainC.Boot;
+	
+}

@@ -1,0 +1,12 @@
+module LabelServerC{
+  provides interface LabelServer;
+}
+implementation{
+	uint32_t labels[20];
+	command error_t LabelServer.addLabel(){
+					return SUCCESS;
+	}
+	command error_t LabelServer.checkTransfer(uint8_t src,uint8_t dest){
+					return SUCCESS;
+	}
+}
