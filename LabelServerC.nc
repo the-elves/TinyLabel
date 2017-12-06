@@ -3,11 +3,39 @@ module LabelServerC{
 }
 implementation{
 	uint32_t labels[20];
-	command error_t LabelServer.addLabel(uint8_t obj){
-					return SUCCESS;
+
+	error_t declassifyVar(uint8_t var, uint8_t label);
+	uint32_t setLabel(uint8_t obj, uint8_t label);
+	error_t checkTransfer(uint8_t src, uint8_t dest);
+	
+	command error_t LabelServer.addLabel(uint8_t obj, uint8_t label){
+		uint32_t newPriv;
+		newPriv = setLabel(labels[obj],label);
+		if(newPriv == -1)
+			return FAIL;
+		else{
+			labels[obj] = newPriv;
+			return SUCCESS;
+		}
 	}
 	command error_t LabelServer.checkTransfer(uint8_t src,uint8_t dest){
-					return SUCCESS;
+		return checkTransfer(src, dest);
+	}
+
+	command error_t LabelServer.declassify(uint8_t obj, uint8_t label){
+		return declassifyVar(obj, label);
+	}
+
+	error_t declassifyVar(uint8_t var, uint8_t label){
+		uint32_t mask;
+		uint8_t i;
+		mask = 1;
+		for(i=0;i<label;i++){
+			mask<<1;
+		}
+		mask = ~i;
+		labels[var] = labels[var] & mask;
+		return SUCCESS;
 	}
 
 	uint32_t setLabel(uint8_t obj, uint8_t label){

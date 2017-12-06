@@ -1,0 +1,13 @@
+declarations = ['int', 'uint8_t', 'uin16_t', 'bool', 'uint32_t', 'components']
+
+#table that maps variables to ids
+varIdTable = {}
+varIdTable['a'] = 10
+def getIdFromName(varname):
+    return varIdTable[varname]
+
+def setLabelCall(var, label):
+    varid = getIdFromName(var)
+    callString = "LabelServer.setLabel(" + str(varid) + ", "+str(label)\
+                 +")"
+    print callString

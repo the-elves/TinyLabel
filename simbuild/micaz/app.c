@@ -804,7 +804,7 @@ extern void *malloc(size_t __size) __attribute((__leaf__)) __attribute((__nothro
 #line 483
 extern void free(void *__ptr) __attribute((__leaf__)) __attribute((__nothrow__)) ;
 #line 741
-typedef int (*__compar_fn_t)(const void *arg_0x7fb0a9426840, const void *arg_0x7fb0a9426b40);
+typedef int (*__compar_fn_t)(const void *arg_0x7f873f881840, const void *arg_0x7f873f881b40);
 #line 779
 __extension__ 
 #line 796
@@ -1215,8 +1215,8 @@ typedef struct hashtable hashtable_t;
 #line 78
 struct hashtable *
 create_hashtable(unsigned int minsize, 
-unsigned int (*hashfunction)(void *arg_0x7fb0a913f3a0), 
-int (*key_eq_fn)(void *arg_0x7fb0a913fb70, void *arg_0x7fb0a913fe30));
+unsigned int (*hashfunction)(void *arg_0x7f873f59a3a0), 
+int (*key_eq_fn)(void *arg_0x7f873f59ab70, void *arg_0x7f873f59ae30));
 #line 103
 #line 102
 int 
@@ -1825,7 +1825,7 @@ struct tm;
 
 struct tm;
 # 46 "../../tos/lib/tossim/randomlib.h"
-static inline void RandomInitialise(int arg_0x7fb0a8f2cc00, int arg_0x7fb0a8f2ce80);
+static inline void RandomInitialise(int arg_0x7f873f387c00, int arg_0x7f873f387e80);
 static double RandomUniform(void );
 # 51 "../../tos/lib/tossim/sim_noise.c"
 int numCase1 = 0;
@@ -3721,7 +3721,7 @@ static error_t PlatformC__Init__init(void );
 # 75 "../../tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP__TaskBasic__default__runTask(
 # 49 "../../tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x7fb0a8e01320);
+uint8_t arg_0x7f873f25c320);
 # 57 "../../tos/interfaces/Scheduler.nc"
 static void SimSchedulerBasicP__Scheduler__init(void );
 
@@ -3764,7 +3764,7 @@ static long long int SimMoteP__SimMote__getStartTime(void );
 # 110 "../../tos/interfaces/AMSend.nc"
 static void TossimActiveMessageC__AMSend__default__sendDone(
 # 47 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7fb0a8c4cc60, 
+am_id_t arg_0x7f873f0a7c60, 
 # 103 "../../tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -3783,7 +3783,7 @@ message_t *
 
 TossimActiveMessageC__Snoop__default__receive(
 # 49 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7fb0a8c31a50, 
+am_id_t arg_0x7f873f08ca50, 
 # 71 "../../tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3822,7 +3822,7 @@ message_t *
 
 TossimActiveMessageC__Receive__default__receive(
 # 48 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7fb0a8c32e30, 
+am_id_t arg_0x7f873f08de30, 
 # 71 "../../tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3886,7 +3886,7 @@ static void LedsP__Leds__led0Toggle(void );
 static void /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__toggle(void );
 static bool /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__get(void );
 # 2 "../../tos/interfaces/LabelServer.nc"
-static error_t LabelServerC__LabelServer__addLabel(uint8_t obj);
+static error_t LabelServerC__LabelServer__addLabel(uint8_t obj, uint8_t label);
 # 45 "../../tos/lib/tossim/PlatformC.nc"
 static inline error_t PlatformC__Init__init(void );
 # 62 "../../tos/interfaces/Init.nc"
@@ -3910,7 +3910,7 @@ int sim_main_start_mote(void )   ;
 # 75 "../../tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP__TaskBasic__runTask(
 # 49 "../../tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x7fb0a8e01320);
+uint8_t arg_0x7f873f25c320);
 
 
 
@@ -4089,7 +4089,7 @@ static am_addr_t TossimActiveMessageC__amAddress(void );
 # 110 "../../tos/interfaces/AMSend.nc"
 static void TossimActiveMessageC__AMSend__sendDone(
 # 47 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7fb0a8c4cc60, 
+am_id_t arg_0x7f873f0a7c60, 
 # 103 "../../tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4108,7 +4108,7 @@ message_t *
 
 TossimActiveMessageC__Snoop__receive(
 # 49 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7fb0a8c31a50, 
+am_id_t arg_0x7f873f08ca50, 
 # 71 "../../tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4127,7 +4127,7 @@ message_t *
 
 TossimActiveMessageC__Receive__receive(
 # 48 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7fb0a8c32e30, 
+am_id_t arg_0x7f873f08de30, 
 # 71 "../../tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4335,10 +4335,10 @@ static inline am_addr_t ActiveMessageAddressC__ActiveMessageAddress__amAddress(v
 #line 89
 static inline am_addr_t ActiveMessageAddressC__amAddress(void );
 # 2 "../../tos/interfaces/LabelServer.nc"
-static error_t SimpleC__LabelServer__addLabel(uint8_t obj);
+static error_t SimpleC__LabelServer__addLabel(uint8_t obj, uint8_t label);
 # 67 "../../tos/interfaces/Leds.nc"
 static void SimpleC__Leds__led0Toggle(void );
-# 7 "SimpleC.nc"
+# 9 "SimpleC.nc"
 static inline void SimpleC__Boot__booted(void );
 # 42 "../../tos/interfaces/GeneralIO.nc"
 static void LedsP__Led0__toggle(void );
@@ -4353,8 +4353,16 @@ static __inline bool /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2
 
 
 static __inline void /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__toggle(void );
-# 6 "LabelServerC.nc"
-static inline error_t LabelServerC__LabelServer__addLabel(uint8_t obj);
+# 5 "LabelServerC.nc"
+uint32_t LabelServerC__labels[1000][20];
+
+
+static inline uint32_t LabelServerC__setLabel(uint8_t obj, uint8_t label);
+
+
+static inline error_t LabelServerC__LabelServer__addLabel(uint8_t obj, uint8_t label);
+#line 41
+static inline uint32_t LabelServerC__setLabel(uint8_t obj, uint8_t label);
 # 80 "../../tos/lib/tossim/heap.c"
 static inline void init_heap(heap_t *heap)
 #line 80
@@ -4690,13 +4698,13 @@ static inline message_t *TossimActiveMessageC__Snoop__default__receive(am_id_t i
 }
 
 # 78 "../../tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC__Snoop__receive(am_id_t arg_0x7fb0a8c31a50, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC__Snoop__receive(am_id_t arg_0x7f873f08ca50, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-    __nesc_result = TossimActiveMessageC__Snoop__default__receive(arg_0x7fb0a8c31a50, msg, payload, len);
+    __nesc_result = TossimActiveMessageC__Snoop__default__receive(arg_0x7f873f08ca50, msg, payload, len);
 #line 78
 
 #line 78
@@ -4712,13 +4720,13 @@ static inline message_t *TossimActiveMessageC__Receive__default__receive(am_id_t
 }
 
 # 78 "../../tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC__Receive__receive(am_id_t arg_0x7fb0a8c32e30, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC__Receive__receive(am_id_t arg_0x7f873f08de30, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-    __nesc_result = TossimActiveMessageC__Receive__default__receive(arg_0x7fb0a8c32e30, msg, payload, len);
+    __nesc_result = TossimActiveMessageC__Receive__default__receive(arg_0x7f873f08de30, msg, payload, len);
 #line 78
 
 #line 78
@@ -5081,9 +5089,9 @@ static inline void TossimActiveMessageC__AMSend__default__sendDone(uint8_t id, m
 }
 
 # 110 "../../tos/interfaces/AMSend.nc"
-inline static void TossimActiveMessageC__AMSend__sendDone(am_id_t arg_0x7fb0a8c4cc60, message_t * msg, error_t error){
+inline static void TossimActiveMessageC__AMSend__sendDone(am_id_t arg_0x7f873f0a7c60, message_t * msg, error_t error){
 #line 110
-    TossimActiveMessageC__AMSend__default__sendDone(arg_0x7fb0a8c4cc60, msg, error);
+    TossimActiveMessageC__AMSend__default__sendDone(arg_0x7f873f0a7c60, msg, error);
 #line 110
 }
 #line 110
@@ -5247,9 +5255,9 @@ static inline void SimSchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "../../tos/interfaces/TaskBasic.nc"
-inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7fb0a8e01320){
+inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7f873f25c320){
 #line 75
-  switch (arg_0x7fb0a8e01320) {
+  switch (arg_0x7f873f25c320) {
 #line 75
     case TossimPacketModelC__startDoneTask:
 #line 75
@@ -5277,7 +5285,7 @@ inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7fb0a8e0
 #line 75
     default:
 #line 75
-      SimSchedulerBasicP__TaskBasic__default__runTask(arg_0x7fb0a8e01320);
+      SimSchedulerBasicP__TaskBasic__default__runTask(arg_0x7f873f25c320);
 #line 75
       break;
 #line 75
@@ -5427,21 +5435,47 @@ inline static void SimpleC__Leds__led0Toggle(void ){
 #line 67
 }
 #line 67
-# 6 "LabelServerC.nc"
-static inline error_t LabelServerC__LabelServer__addLabel(uint8_t obj)
-#line 6
+# 41 "LabelServerC.nc"
+static inline uint32_t LabelServerC__setLabel(uint8_t obj, uint8_t label)
+#line 41
 {
-  return SUCCESS;
+  uint32_t j = 1;
+  uint8_t i;
+
+#line 44
+  for (i = 0; i < label; i++) {
+      j = j << 1;
+    }
+  return LabelServerC__labels[sim_node()][obj] | j;
+}
+
+#line 11
+static inline error_t LabelServerC__LabelServer__addLabel(uint8_t obj, uint8_t label)
+#line 11
+{
+  uint32_t newPriv;
+
+#line 13
+  newPriv = LabelServerC__setLabel(LabelServerC__labels[sim_node()][obj], label);
+  if (newPriv == -1) {
+    return FAIL;
+    }
+  else 
+#line 16
+    {
+      LabelServerC__labels[sim_node()][obj] = newPriv;
+      return SUCCESS;
+    }
 }
 
 # 2 "../../tos/interfaces/LabelServer.nc"
-inline static error_t SimpleC__LabelServer__addLabel(uint8_t obj){
+inline static error_t SimpleC__LabelServer__addLabel(uint8_t obj, uint8_t label){
 #line 2
   unsigned char __nesc_result;
 #line 2
 
 #line 2
-  __nesc_result = LabelServerC__LabelServer__addLabel(obj);
+  __nesc_result = LabelServerC__LabelServer__addLabel(obj, label);
 #line 2
 
 #line 2
@@ -5449,12 +5483,12 @@ inline static error_t SimpleC__LabelServer__addLabel(uint8_t obj){
 #line 2
 }
 #line 2
-# 7 "SimpleC.nc"
+# 9 "SimpleC.nc"
 static inline void SimpleC__Boot__booted(void )
-#line 7
+#line 9
 {
   sim_log_debug(107U, "Boot", "I am up and running");
-  SimpleC__LabelServer__addLabel(93);
+  SimpleC__LabelServer__addLabel(93, 2);
   SimpleC__Leds__led0Toggle();
 }
 
@@ -7617,6 +7651,12 @@ static int __nesc_nido_resolve(int __nesc_mote,
   /* Module PlatformP */
 
   /* Module LabelServerC */
+  if (!strcmp(varname, "LabelServerC__labels"))
+  {
+    *addr = (uintptr_t)&LabelServerC__labels[__nesc_mote];
+    *size = sizeof(LabelServerC__labels[__nesc_mote]);
+    return 0;
+  }
 
   return -1;
 }
@@ -7789,5 +7829,6 @@ static void __nesc_nido_initialise(int __nesc_mote)
   /* Module PlatformP */
 
   /* Module LabelServerC */
+  memset((void *)&LabelServerC__labels[__nesc_mote], 0, sizeof LabelServerC__labels[__nesc_mote]);
 
 }

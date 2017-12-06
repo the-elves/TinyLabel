@@ -4,11 +4,11 @@ module SimpleC{
 	uses interface LabelServer;
 }
 implementation{
-	uin8_t secret;
+	uint8_t secret;
 	
 	event void Boot.booted(){
 		dbg("Boot","I am up and running");
-		call LabelServer.addLabel(93);
+		call LabelServer.addLabel(93,2);
 		call Leds.led0Toggle();
 	}
 }
