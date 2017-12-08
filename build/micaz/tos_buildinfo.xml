@@ -1,0 +1,8 @@
+<metrics>
+  <ram>0</ram>
+  <micaz-ram>0</micaz-ram>
+  <flash>990</flash>
+  <micaz-flash>990</micaz-flash>
+  <stack>86</stack>
+  <micaz-stack>86</micaz-stack>
+</metrics>

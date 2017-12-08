@@ -1,0 +1,9 @@
+Assumption
+
+1. Single declarations per line
+2. Label assignent at the begining
+3. no expressions in function calls
+4. Curly on same line
+5. booted is the first event
+5. 3 address form
+

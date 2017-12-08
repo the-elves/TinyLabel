@@ -804,7 +804,7 @@ extern void *malloc(size_t __size) __attribute((__leaf__)) __attribute((__nothro
 #line 483
 extern void free(void *__ptr) __attribute((__leaf__)) __attribute((__nothrow__)) ;
 #line 741
-typedef int (*__compar_fn_t)(const void *arg_0x7f873f881840, const void *arg_0x7f873f881b40);
+typedef int (*__compar_fn_t)(const void *arg_0x7f91a4b48840, const void *arg_0x7f91a4b48b40);
 #line 779
 __extension__ 
 #line 796
@@ -1215,8 +1215,8 @@ typedef struct hashtable hashtable_t;
 #line 78
 struct hashtable *
 create_hashtable(unsigned int minsize, 
-unsigned int (*hashfunction)(void *arg_0x7f873f59a3a0), 
-int (*key_eq_fn)(void *arg_0x7f873f59ab70, void *arg_0x7f873f59ae30));
+unsigned int (*hashfunction)(void *arg_0x7f91a48613a0), 
+int (*key_eq_fn)(void *arg_0x7f91a4861b70, void *arg_0x7f91a4861e30));
 #line 103
 #line 102
 int 
@@ -1252,7 +1252,7 @@ typedef struct sim_log_channel {
 } sim_log_channel_t;
 
 enum __nesc_unnamed4272 {
-  SIM_LOG_OUTPUT_COUNT = 166U
+  SIM_LOG_OUTPUT_COUNT = 170U
 };
 
 sim_log_output_t outputs[SIM_LOG_OUTPUT_COUNT];
@@ -1825,7 +1825,7 @@ struct tm;
 
 struct tm;
 # 46 "../../tos/lib/tossim/randomlib.h"
-static inline void RandomInitialise(int arg_0x7f873f387c00, int arg_0x7f873f387e80);
+static inline void RandomInitialise(int arg_0x7f91a464ec00, int arg_0x7f91a464ee80);
 static double RandomUniform(void );
 # 51 "../../tos/lib/tossim/sim_noise.c"
 int numCase1 = 0;
@@ -3721,7 +3721,7 @@ static error_t PlatformC__Init__init(void );
 # 75 "../../tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP__TaskBasic__default__runTask(
 # 49 "../../tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x7f873f25c320);
+uint8_t arg_0x7f91a4523320);
 # 57 "../../tos/interfaces/Scheduler.nc"
 static void SimSchedulerBasicP__Scheduler__init(void );
 
@@ -3764,7 +3764,7 @@ static long long int SimMoteP__SimMote__getStartTime(void );
 # 110 "../../tos/interfaces/AMSend.nc"
 static void TossimActiveMessageC__AMSend__default__sendDone(
 # 47 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7f873f0a7c60, 
+am_id_t arg_0x7f91a436ec60, 
 # 103 "../../tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -3783,7 +3783,7 @@ message_t *
 
 TossimActiveMessageC__Snoop__default__receive(
 # 49 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7f873f08ca50, 
+am_id_t arg_0x7f91a4353a50, 
 # 71 "../../tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3822,7 +3822,7 @@ message_t *
 
 TossimActiveMessageC__Receive__default__receive(
 # 48 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7f873f08de30, 
+am_id_t arg_0x7f91a4354e30, 
 # 71 "../../tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -3880,13 +3880,15 @@ static am_addr_t ActiveMessageAddressC__amAddress(void );
 static am_addr_t ActiveMessageAddressC__ActiveMessageAddress__amAddress(void );
 # 60 "../../tos/interfaces/Boot.nc"
 static void SimpleC__Boot__booted(void );
-# 67 "../../tos/interfaces/Leds.nc"
-static void LedsP__Leds__led0Toggle(void );
-# 42 "../../tos/interfaces/GeneralIO.nc"
-static void /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__toggle(void );
-static bool /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__get(void );
-# 2 "../../tos/interfaces/LabelServer.nc"
+# 3 "../../tos/interfaces/LabelServer.nc"
+static error_t LabelServerC__LabelServer__checkTransfer(uint8_t src, uint8_t dest);
+#line 2
 static error_t LabelServerC__LabelServer__addLabel(uint8_t obj, uint8_t label);
+
+
+static error_t LabelServerC__LabelServer__modifyLabel(uint8_t arg_0x7f91a409ad90, uint8_t labelVar);
+# 2 "ToolI.nc"
+static error_t ToolC__ToolI__add(uint8_t i1, uint8_t i2);
 # 45 "../../tos/lib/tossim/PlatformC.nc"
 static inline error_t PlatformC__Init__init(void );
 # 62 "../../tos/interfaces/Init.nc"
@@ -3910,7 +3912,7 @@ int sim_main_start_mote(void )   ;
 # 75 "../../tos/interfaces/TaskBasic.nc"
 static void SimSchedulerBasicP__TaskBasic__runTask(
 # 49 "../../tos/lib/tossim/SimSchedulerBasicP.nc"
-uint8_t arg_0x7f873f25c320);
+uint8_t arg_0x7f91a4523320);
 
 
 
@@ -4089,7 +4091,7 @@ static am_addr_t TossimActiveMessageC__amAddress(void );
 # 110 "../../tos/interfaces/AMSend.nc"
 static void TossimActiveMessageC__AMSend__sendDone(
 # 47 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7f873f0a7c60, 
+am_id_t arg_0x7f91a436ec60, 
 # 103 "../../tos/interfaces/AMSend.nc"
 message_t * msg, 
 
@@ -4108,7 +4110,7 @@ message_t *
 
 TossimActiveMessageC__Snoop__receive(
 # 49 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7f873f08ca50, 
+am_id_t arg_0x7f91a4353a50, 
 # 71 "../../tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4127,7 +4129,7 @@ message_t *
 
 TossimActiveMessageC__Receive__receive(
 # 48 "../../tos/lib/tossim/TossimActiveMessageC.nc"
-am_id_t arg_0x7f873f08de30, 
+am_id_t arg_0x7f91a4354e30, 
 # 71 "../../tos/interfaces/Receive.nc"
 message_t * msg, 
 void * payload, 
@@ -4334,35 +4336,58 @@ am_addr_t ActiveMessageAddressC__addr[1000];
 static inline am_addr_t ActiveMessageAddressC__ActiveMessageAddress__amAddress(void );
 #line 89
 static inline am_addr_t ActiveMessageAddressC__amAddress(void );
-# 2 "../../tos/interfaces/LabelServer.nc"
+# 3 "../../tos/interfaces/LabelServer.nc"
+static error_t SimpleC__LabelServer__checkTransfer(uint8_t src, uint8_t dest);
+#line 2
 static error_t SimpleC__LabelServer__addLabel(uint8_t obj, uint8_t label);
-# 67 "../../tos/interfaces/Leds.nc"
-static void SimpleC__Leds__led0Toggle(void );
+
+
+static error_t SimpleC__LabelServer__modifyLabel(uint8_t arg_0x7f91a409ad90, uint8_t labelVar);
+# 2 "ToolI.nc"
+static error_t SimpleC__ToolI__add(uint8_t i1, uint8_t i2);
 # 9 "SimpleC.nc"
+uint8_t SimpleC__secret[1000];
+
+uint8_t SimpleC__secret2[1000];
+
 static inline void SimpleC__Boot__booted(void );
-# 42 "../../tos/interfaces/GeneralIO.nc"
-static void LedsP__Led0__toggle(void );
-static bool LedsP__Led0__get(void );
-# 84 "../../tos/system/LedsP.nc"
-static inline void LedsP__Leds__led0Toggle(void );
-# 54 "../../tos/chips/atm128/pins/sim/HplAtm128GeneralIOPinP.nc"
-static __inline bool /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__get(void );
-
-
-
-
-
-static __inline void /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__toggle(void );
 # 5 "LabelServerC.nc"
 uint32_t LabelServerC__labels[1000][20];
 
 
 static inline uint32_t LabelServerC__setLabel(uint8_t obj, uint8_t label);
+static error_t LabelServerC__checkTransfer(uint8_t src, uint8_t dest);
 
 
-static inline error_t LabelServerC__LabelServer__addLabel(uint8_t obj, uint8_t label);
-#line 41
+static inline error_t LabelServerC__LabelServer__modifyLabel(uint8_t obj, uint8_t labelVar);
+
+
+
+static error_t LabelServerC__LabelServer__addLabel(uint8_t obj, uint8_t label);
+
+
+
+
+
+
+
+
+
+static inline error_t LabelServerC__LabelServer__checkTransfer(uint8_t src, uint8_t dest);
+#line 46
 static inline uint32_t LabelServerC__setLabel(uint8_t obj, uint8_t label);
+
+
+
+
+
+
+
+
+
+static error_t LabelServerC__checkTransfer(uint8_t src, uint8_t dest);
+# 5 "ToolC.nc"
+static inline error_t ToolC__ToolI__add(uint8_t i1, uint8_t i2);
 # 80 "../../tos/lib/tossim/heap.c"
 static inline void init_heap(heap_t *heap)
 #line 80
@@ -4698,13 +4723,13 @@ static inline message_t *TossimActiveMessageC__Snoop__default__receive(am_id_t i
 }
 
 # 78 "../../tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC__Snoop__receive(am_id_t arg_0x7f873f08ca50, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC__Snoop__receive(am_id_t arg_0x7f91a4353a50, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-    __nesc_result = TossimActiveMessageC__Snoop__default__receive(arg_0x7f873f08ca50, msg, payload, len);
+    __nesc_result = TossimActiveMessageC__Snoop__default__receive(arg_0x7f91a4353a50, msg, payload, len);
 #line 78
 
 #line 78
@@ -4720,13 +4745,13 @@ static inline message_t *TossimActiveMessageC__Receive__default__receive(am_id_t
 }
 
 # 78 "../../tos/interfaces/Receive.nc"
-inline static message_t * TossimActiveMessageC__Receive__receive(am_id_t arg_0x7f873f08de30, message_t * msg, void * payload, uint8_t len){
+inline static message_t * TossimActiveMessageC__Receive__receive(am_id_t arg_0x7f91a4354e30, message_t * msg, void * payload, uint8_t len){
 #line 78
   nx_struct message_t *__nesc_result;
 #line 78
 
 #line 78
-    __nesc_result = TossimActiveMessageC__Receive__default__receive(arg_0x7f873f08de30, msg, payload, len);
+    __nesc_result = TossimActiveMessageC__Receive__default__receive(arg_0x7f91a4354e30, msg, payload, len);
 #line 78
 
 #line 78
@@ -5089,9 +5114,9 @@ static inline void TossimActiveMessageC__AMSend__default__sendDone(uint8_t id, m
 }
 
 # 110 "../../tos/interfaces/AMSend.nc"
-inline static void TossimActiveMessageC__AMSend__sendDone(am_id_t arg_0x7f873f0a7c60, message_t * msg, error_t error){
+inline static void TossimActiveMessageC__AMSend__sendDone(am_id_t arg_0x7f91a436ec60, message_t * msg, error_t error){
 #line 110
-    TossimActiveMessageC__AMSend__default__sendDone(arg_0x7f873f0a7c60, msg, error);
+    TossimActiveMessageC__AMSend__default__sendDone(arg_0x7f91a436ec60, msg, error);
 #line 110
 }
 #line 110
@@ -5255,9 +5280,9 @@ static inline void SimSchedulerBasicP__TaskBasic__default__runTask(uint8_t id)
 }
 
 # 75 "../../tos/interfaces/TaskBasic.nc"
-inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7f873f25c320){
+inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7f91a4523320){
 #line 75
-  switch (arg_0x7f873f25c320) {
+  switch (arg_0x7f91a4523320) {
 #line 75
     case TossimPacketModelC__startDoneTask:
 #line 75
@@ -5285,7 +5310,7 @@ inline static void SimSchedulerBasicP__TaskBasic__runTask(uint8_t arg_0x7f873f25
 #line 75
     default:
 #line 75
-      SimSchedulerBasicP__TaskBasic__default__runTask(arg_0x7f873f25c320);
+      SimSchedulerBasicP__TaskBasic__default__runTask(arg_0x7f91a4523320);
 #line 75
       break;
 #line 75
@@ -5376,99 +5401,74 @@ static __inline void __nesc_enable_interrupt()
   atm128RegFile[sim_node()][* (volatile uint8_t *)&atm128RegFile[sim_node()][0x3F]] |= 1 << 7;
 }
 
-# 54 "../../tos/chips/atm128/pins/sim/HplAtm128GeneralIOPinP.nc"
-static __inline bool /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__get(void )
-#line 54
+# 12 "LabelServerC.nc"
+static inline error_t LabelServerC__LabelServer__modifyLabel(uint8_t obj, uint8_t labelVar)
+#line 12
 {
-#line 54
-  return (atm128RegFile[sim_node()][27U] & (1 << 2)) != 0;
+  LabelServerC__labels[sim_node()][obj] = LabelServerC__labels[sim_node()][obj] | LabelServerC__labels[sim_node()][labelVar];
+  return SUCCESS;
 }
 
-# 43 "../../tos/interfaces/GeneralIO.nc"
-inline static bool LedsP__Led0__get(void ){
-#line 43
+# 5 "../../tos/interfaces/LabelServer.nc"
+inline static error_t SimpleC__LabelServer__modifyLabel(uint8_t arg_0x7f91a409ad90, uint8_t labelVar){
+#line 5
   unsigned char __nesc_result;
-#line 43
+#line 5
 
-#line 43
-  __nesc_result = /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__get();
-#line 43
+#line 5
+  __nesc_result = LabelServerC__LabelServer__modifyLabel(arg_0x7f91a409ad90, labelVar);
+#line 5
 
-#line 43
+#line 5
   return __nesc_result;
-#line 43
+#line 5
 }
-#line 43
-# 60 "../../tos/chips/atm128/pins/sim/HplAtm128GeneralIOPinP.nc"
-static __inline void /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__toggle(void )
-#line 60
+#line 5
+# 5 "ToolC.nc"
+static inline error_t ToolC__ToolI__add(uint8_t i1, uint8_t i2)
+#line 5
 {
-#line 60
-  { __nesc_atomic_t __nesc_atomic = __nesc_atomic_start();
-#line 60
-    atm128RegFile[sim_node()][27U] ^= 1 << 2;
-#line 60
-    __nesc_atomic_end(__nesc_atomic); }
+  return SUCCESS;
 }
 
-# 42 "../../tos/interfaces/GeneralIO.nc"
-inline static void LedsP__Led0__toggle(void ){
-#line 42
-  /*HplAtm128GeneralIOC.PortA.Bit2*/HplAtm128GeneralIOPinP__2__IO__toggle();
-#line 42
+# 2 "ToolI.nc"
+inline static error_t SimpleC__ToolI__add(uint8_t i1, uint8_t i2){
+#line 2
+  unsigned char __nesc_result;
+#line 2
+
+#line 2
+  __nesc_result = ToolC__ToolI__add(i1, i2);
+#line 2
+
+#line 2
+  return __nesc_result;
+#line 2
 }
-#line 42
-# 84 "../../tos/system/LedsP.nc"
-static inline void LedsP__Leds__led0Toggle(void )
-#line 84
+#line 2
+# 26 "LabelServerC.nc"
+static inline error_t LabelServerC__LabelServer__checkTransfer(uint8_t src, uint8_t dest)
+#line 26
 {
-  LedsP__Led0__toggle();
-  sim_log_debug(111U, "LedsC", "LEDS: Led""0"" %s.\n", LedsP__Led0__get() ? "off" : "on");
-#line 86
-  ;
+  return LabelServerC__checkTransfer(src, dest);
 }
 
-# 67 "../../tos/interfaces/Leds.nc"
-inline static void SimpleC__Leds__led0Toggle(void ){
-#line 67
-  LedsP__Leds__led0Toggle();
-#line 67
+# 3 "../../tos/interfaces/LabelServer.nc"
+inline static error_t SimpleC__LabelServer__checkTransfer(uint8_t src, uint8_t dest){
+#line 3
+  unsigned char __nesc_result;
+#line 3
+
+#line 3
+  __nesc_result = LabelServerC__LabelServer__checkTransfer(src, dest);
+#line 3
+
+#line 3
+  return __nesc_result;
+#line 3
 }
-#line 67
-# 41 "LabelServerC.nc"
-static inline uint32_t LabelServerC__setLabel(uint8_t obj, uint8_t label)
-#line 41
-{
-  uint32_t j = 1;
-  uint8_t i;
-
-#line 44
-  for (i = 0; i < label; i++) {
-      j = j << 1;
-    }
-  return LabelServerC__labels[sim_node()][obj] | j;
-}
-
-#line 11
-static inline error_t LabelServerC__LabelServer__addLabel(uint8_t obj, uint8_t label)
-#line 11
-{
-  uint32_t newPriv;
-
-#line 13
-  newPriv = LabelServerC__setLabel(LabelServerC__labels[sim_node()][obj], label);
-  if (newPriv == -1) {
-    return FAIL;
-    }
-  else 
-#line 16
-    {
-      LabelServerC__labels[sim_node()][obj] = newPriv;
-      return SUCCESS;
-    }
-}
-
-# 2 "../../tos/interfaces/LabelServer.nc"
+#line 3
+#line 2
 inline static error_t SimpleC__LabelServer__addLabel(uint8_t obj, uint8_t label){
 #line 2
   unsigned char __nesc_result;
@@ -5483,13 +5483,42 @@ inline static error_t SimpleC__LabelServer__addLabel(uint8_t obj, uint8_t label)
 #line 2
 }
 #line 2
-# 9 "SimpleC.nc"
+# 13 "SimpleC.nc"
 static inline void SimpleC__Boot__booted(void )
-#line 9
+#line 13
 {
-  sim_log_debug(107U, "Boot", "I am up and running");
-  SimpleC__LabelServer__addLabel(93, 2);
-  SimpleC__Leds__led0Toggle();
+
+  SimpleC__LabelServer__addLabel(0, 1);
+
+  SimpleC__LabelServer__addLabel(0, 2);
+
+  SimpleC__LabelServer__addLabel(1, 3);
+
+  SimpleC__LabelServer__addLabel(2, 1);
+
+  SimpleC__LabelServer__addLabel(2, 2);
+
+  SimpleC__LabelServer__addLabel(3, 2);
+
+  sim_log_debug(107U, "Boot", "labels setup for all variables");
+  sim_log_debug(108U, "Boot", "I am up and running");
+
+  if (SimpleC__LabelServer__checkTransfer(2, 1) == SUCCESS && SimpleC__LabelServer__checkTransfer(3, 1) == SUCCESS) {
+#line 30
+      SimpleC__ToolI__add(SimpleC__secret[sim_node()], SimpleC__secret2[sim_node()]);
+    }
+  else 
+#line 30
+    {
+#line 30
+      sim_log_debug(109U, "Boot", "Cannot execute call ToolI.add(secret, secret2)");
+    }
+  SimpleC__secret[sim_node()] = 0;
+
+  SimpleC__LabelServer__modifyLabel(2, SimpleC__secret[sim_node()]);
+  SimpleC__LabelServer__modifyLabel(2, SimpleC__secret2[sim_node()]);
+
+  SimpleC__secret[sim_node()] = SimpleC__secret[sim_node()] + SimpleC__secret2[sim_node()];
 }
 
 # 60 "../../tos/interfaces/Boot.nc"
@@ -5499,6 +5528,21 @@ inline static void SimMainP__Boot__booted(void ){
 #line 60
 }
 #line 60
+# 46 "LabelServerC.nc"
+static inline uint32_t LabelServerC__setLabel(uint8_t obj, uint8_t label)
+#line 46
+{
+  uint32_t j = 1;
+  uint8_t i;
+
+#line 49
+  for (i = 0; i < label; i++) {
+      j = j << 1;
+    }
+  sim_log_debug(168U, "Boot", "\n addlabel obj = %d, label = %d", obj, LabelServerC__labels[sim_node()][obj]);
+  return LabelServerC__labels[sim_node()][obj] | j;
+}
+
 # 61 "../../tos/lib/tossim/SimMoteP.nc"
 static inline error_t SimMoteP__SimMote__setRadioChannel(uint8_t newRadioChannel)
 {
@@ -7162,7 +7206,59 @@ static bool SimSchedulerBasicP__Scheduler__runNextTask(void )
   return result;
 }
 
-#line 86
+# 16 "LabelServerC.nc"
+static error_t LabelServerC__LabelServer__addLabel(uint8_t obj, uint8_t label)
+#line 16
+{
+  uint32_t newPriv;
+
+#line 18
+  newPriv = LabelServerC__setLabel(obj, label);
+  if (newPriv == -1) {
+    return FAIL;
+    }
+  else 
+#line 21
+    {
+      LabelServerC__labels[sim_node()][obj] = newPriv;
+      return SUCCESS;
+    }
+}
+
+#line 56
+static error_t LabelServerC__checkTransfer(uint8_t src, uint8_t dest)
+#line 56
+{
+  uint8_t i = 0;
+  uint8_t srcLabel;
+#line 58
+  uint8_t destLabel;
+  bool allowed = 1;
+  uint32_t mask = 1;
+
+#line 61
+  sim_log_debug(169U, "Boot", "\nsrcLabel = %d, destLabel = %d\n", LabelServerC__labels[sim_node()][src], LabelServerC__labels[sim_node()][dest]);
+  for (i = 0; i < 32; i++) {
+      srcLabel = LabelServerC__labels[sim_node()][src] & mask;
+      destLabel = LabelServerC__labels[sim_node()][dest] & mask;
+      if (srcLabel != 0) {
+          if (destLabel == 0) {
+              allowed = 0;
+              break;
+            }
+        }
+      mask = mask << 1;
+    }
+  if (allowed == 1) {
+    return SUCCESS;
+    }
+  else {
+#line 76
+    return FAIL;
+    }
+}
+
+# 86 "../../tos/lib/tossim/SimMoteP.nc"
   error_t sim_mote_set_radio_channel(int mote, uint8_t newRadioChannel)
 #line 86
 {
@@ -7523,6 +7619,18 @@ static int __nesc_nido_resolve(int __nesc_mote,
   }
 
   /* Module SimpleC */
+  if (!strcmp(varname, "SimpleC__secret"))
+  {
+    *addr = (uintptr_t)&SimpleC__secret[__nesc_mote];
+    *size = sizeof(SimpleC__secret[__nesc_mote]);
+    return 0;
+  }
+  if (!strcmp(varname, "SimpleC__secret2"))
+  {
+    *addr = (uintptr_t)&SimpleC__secret2[__nesc_mote];
+    *size = sizeof(SimpleC__secret2[__nesc_mote]);
+    return 0;
+  }
 
   /* Module LedsP */
 
@@ -7658,6 +7766,8 @@ static int __nesc_nido_resolve(int __nesc_mote,
     return 0;
   }
 
+  /* Module ToolC */
+
   return -1;
 }
 /* Invoke static initialisers for mote '__nesc_mote' */
@@ -7701,6 +7811,8 @@ static void __nesc_nido_initialise(int __nesc_mote)
   memset((void *)&ActiveMessageAddressC__addr[__nesc_mote], 0, sizeof ActiveMessageAddressC__addr[__nesc_mote]);
 
   /* Module SimpleC */
+  memset((void *)&SimpleC__secret[__nesc_mote], 0, sizeof SimpleC__secret[__nesc_mote]);
+  memset((void *)&SimpleC__secret2[__nesc_mote], 0, sizeof SimpleC__secret2[__nesc_mote]);
 
   /* Module LedsP */
 
@@ -7830,5 +7942,7 @@ static void __nesc_nido_initialise(int __nesc_mote)
 
   /* Module LabelServerC */
   memset((void *)&LabelServerC__labels[__nesc_mote], 0, sizeof LabelServerC__labels[__nesc_mote]);
+
+  /* Module ToolC */
 
 }

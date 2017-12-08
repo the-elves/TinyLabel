@@ -1,0 +1,15 @@
+module SimpleC{
+	uses interface Leds##12;
+	uses interface Boot;
+	uses interface LabelServer;
+}
+implementation{
+	uint8_t   secret##1;
+	
+	event void Boot.booted(){
+		dbg("Boot","I am up and running");
+		call Leds.led0Toggle();
+		secret = 0;
+		secret = secret + 1;
+	}
+}

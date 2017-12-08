@@ -1,0 +1,5 @@
+Assumption
+
+1. Single declarations per line
+2. Label assignent at the begining
+3. no expressions in function calls
